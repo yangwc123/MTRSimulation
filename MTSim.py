@@ -373,7 +373,6 @@ def test(Tf, kbr0 = 4.0e-15, zeta = 0.5, DOS = 'exp', gen = 'all' ):
     return dh
 
 
-
 def process( d0 ):
         import LP_func
 
@@ -384,3 +383,5 @@ def process( d0 ):
                                              for i in xrange(t.shape[0])])
 
         d0.setData('Emean', E_mean)
+
+test(300)
