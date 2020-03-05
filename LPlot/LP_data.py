@@ -264,10 +264,10 @@ class m_Data2D(m_dataObject):
     def __init__(self, data=None, x=None, y=None, z=None, **kwargs):
         if data is None:
             if x is None or y is None or z is None:
-                print 'WARNING: Initialisation failed! Either data or x AND y have to have values'
+                print ('WARNING: Initialisation failed! Either data or x AND y have to have values')
             else:
                 if _asarray(z).ndim < 2:
-                    print 'WARNING: Initialisation failed! z data needs tow be 2-dimensional array'
+                    print ('WARNING: Initialisation failed! z data needs tow be 2-dimensional array')
                 else:
                     from numpy import meshgrid
                     if _asarray(x).ndim == 1  and _asarray(y).ndim == 1:
@@ -292,7 +292,7 @@ class m_Data1D(m_dataObject):
     def __init__(self, data=None, x=None, y=None, **kwargs):
         if data is None:
             if x is None or y is None:
-                print 'WARNING: Initialisation failed! Either data or x AND y have to have values'
+                print ('WARNING: Initialisation failed! Either data or x AND y have to have values')
             else:
                 m_dataObject.__init__(self, data=m_Data(x=x,y=y), **kwargs)
         else:
@@ -433,8 +433,8 @@ class m_dataHandler(LP_object.m_Object,LP_saveload.m_IgorSave):
             self._appendToHeader(_asarray(dOs))
             self.updateHeader()
         else:
-            print '%s kann nicht durch m_dataHandler verwaltet werden.'
-            print 'Objekte muessen von der Klasse "LP_data.m_dataObject" sein.' %str(_asarray(dOs)[0].__class__).split("'")[1]
+            print ('%s kann nicht durch m_dataHandler verwaltet werden.')
+            print ('Objekte muessen von der Klasse "LP_data.m_dataObject" sein.' %str(_asarray(dOs)[0].__class__).split("'")[1])
 
     def size(self):
         return len(self.objects)
